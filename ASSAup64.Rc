@@ -37,7 +37,7 @@ LANGUAGE 9, SUBLANG_DEFAULT
         BLOCK "040904E4"
         {
             VALUE "CompanyName", "Released under the GPL by WH Minter"
-            VALUE "FileDescription", ".ASS Subtitle PAL to NTSC converter 64 bit"
+            VALUE "FileDescription", ".ASS PAL to NTSC converter 64-bit"
             VALUE "FileVersion", ASSAUP_VERSION
             VALUE "InternalName", "ASSAup"
             VALUE "LegalCopyright", "WH Minter"
