@@ -12,8 +12,9 @@
  * by W.H.Minter                                          *
  * 08/12/2013                                             *
  * 02/14/2014 - cosmetic fixes                            *
- * 01/23/2016 - backu file naming changed, command line   *
+ * 01/23/2016 - backup file naming changed, command line  *
  *              seitches added                            *
+ * 03/24/2016 - version maintainence improvement          *
  **********************************************************/
 
 #include <stdio.h>
@@ -24,16 +25,20 @@
 #include "conclr.h"
 #include "sep.h"
 #include "fexist.h"
+#include "version.h"
 
 #ifdef _MSC_VER
 #ifdef _M_X64
 #define ENVIRONMENT64
 #define COPYRIGHT_NOTICE \
-        "ASSAup v1.1 (c) 2013, 2016 WH Minter.\nAll rights reserved.\nMSVC 2013 64-bit build.\n"
+        "ASSAup v" ASSAUP_VERSION " (c) 2013, 2016 WH Minter.\nAll rights reserved.\nMSVC 64-bit build.\n"  \
+        "Built on " __DATE__ " at " __TIME__ ".\n"
+
 #else
 #define ENVIRONMENT32
 #define COPYRIGHT_NOTICE \
-        "ASSAup v1.1 (c) 2013, 2016 WH Minter.\nAll rights reserved.\nMSVC 2013 32-bit build.\n"
+        "ASSAup v" ASSAUP_VERSION " (c) 2013, 2016 WH Minter.\nAll rights reserved.\nMSVC 32-bit build.\n"  \
+        "Built on " __DATE__ " at " __TIME__ ".\n"
 #endif
 #endif
 
@@ -41,11 +46,15 @@
 #if __x86_64__ || __ppc64__
 #define ENVIRONMENT64
 #define COPYRIGHT_NOTICE \
-        "ASSAup v1.1 (c) 2013, 2016 WH Minter.\nAll rights reserved.\nGCC-MinGW 64-bit build.\n"
+        "ASSAup v" ASSAUP_VERSION " (c) 2013, 2016 WH Minter.\nAll rights reserved.\nGCC-MinGW v." __VERSION__ " 64-bit build.\n"  \
+        "Built on " __DATE__ " at " __TIME__ ".\n"
+
 #else
 #define ENVIRONMENT32
 #define COPYRIGHT_NOTICE \
-        "ASSAup v1.1 (c) 2013, 2016 WH Minter.\nAll rights reserved.\nGCC-MinGW 32-bit build.\n"
+        "ASSAup v" ASSAUP_VERSION " (c) 2013, 2016 WH Minter.\nAll rights reserved.\nGCC-MinGW v." __VERSION__ " 32-bit build.\n"  \
+        "Built on " __DATE__ " at " __TIME__ ".\n"
+
 #endif
 #endif
 
