@@ -1,6 +1,6 @@
 CC=gcc
-CFLAGS=-c -Wall -O3
-LDFLAGS=-s
+CFLAGS=-c -Wall -O3 -m64
+LDFLAGS=-s -m64
 SOURCES=assaup.c conclr.c sep.c gotoxy.c timefmt.c fexist.c
 RES=ASSAup.Res
 RES64=ASSAup64.Res
@@ -14,8 +14,8 @@ EXECUTABLE=ASSAup.Exe
 all: $(SOURCES) $(EXECUTABLE)
 	
 $(EXECUTABLE): $(OBJECTS)
-	windres $(RC) $(RCFLAGS) -o $(RES)
-	$(CC) $(LDFLAGS) $(OBJECTS) $(RES) -o $@
+	windres $(RC64) $(RCFLAGS64) -o $(RES64)
+	$(CC) $(LDFLAGS) $(OBJECTS) $(RES64) -o $@
 
 .c.o:
 	$(CC) $(CFLAGS) $< -o $@
