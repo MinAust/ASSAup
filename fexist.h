@@ -1,0 +1,1 @@
+int fexist (char *fname);

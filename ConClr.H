@@ -1,0 +1,1 @@
+int     conclr (int icolor);
